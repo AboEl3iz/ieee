@@ -7,7 +7,7 @@ class LoginView extends StatefulWidget {
   @override
   State<LoginView> createState() => _LoginViewState();
 }
-
+//variables use to validate textfields
 final keyform = GlobalKey<FormState>();
 TextEditingController _email = TextEditingController();
 TextEditingController _password = TextEditingController();
@@ -19,6 +19,7 @@ class _LoginViewState extends State<LoginView> {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(8.0),
+        //form use to make sure the validation is done or not
         child: Form(
           key: keyform,
           child: Column(
@@ -89,6 +90,7 @@ class _LoginViewState extends State<LoginView> {
                 color: Colors.blue,
                 onPressed: () {
                   if (keyform.currentState!.validate()) {
+                    // if it validate show dialog
                     showDialog(
                       context: context,
                       builder: (context) => const Dialog(
@@ -106,6 +108,7 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 25,
               ),
+              //facebook buttom
               MaterialButton(
                 height: 60,
                 minWidth: double.infinity,
